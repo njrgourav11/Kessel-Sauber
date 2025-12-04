@@ -43,7 +43,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
 
     return (
-        <section className="relative py-12 md:py-20 bg-black overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-background overflow-hidden">
             <div className="container max-w-[1220px] w-full px-6 md:px-10 relative z-10 mx-auto">
                 <motion.div
                     className={`grid grid-cols-1 gap-8 md:gap-12 w-full items-center ${layoutClasses}`}
@@ -58,17 +58,17 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                         variants={itemVariants}
                     >
                         <div className="space-y-4">
-                            <h2 className="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+                            <h2 className="text-foreground text-4xl md:text-6xl font-bold leading-tight tracking-tight">
                                 {title}
                             </h2>
                         </div>
 
-                        <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+                        <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-lg">
                             {description}
                         </p>
                         {/* Optional: Add a button or link here */}
                         <div className="pt-2">
-                            <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-[#ff6b00] hover:bg-orange-600 rounded-md transition-all duration-200 shadow-lg hover:shadow-orange-500/25">
+                            <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-accent hover:bg-orange-600 rounded-md transition-all duration-200 shadow-lg hover:shadow-orange-500/25">
                                 Get a Quote
                             </a>
                         </div>
@@ -81,7 +81,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                     >
                         {/* Decorative Background Element */}
                         <motion.div
-                            className={`absolute w-full h-full bg-gradient-to-tr from-[#ff6b00]/20 to-purple-500/20 rounded-full blur-3xl z-0`}
+                            className={`absolute w-full h-full bg-gradient-to-tr from-accent/20 to-purple-500/20 rounded-full blur-3xl z-0`}
                             style={{
                                 top: '50%',
                                 left: '50%',
@@ -91,7 +91,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
                         {/* Main Mockup Card */}
                         <motion.div
-                            className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-zinc-900/50 rounded-2xl border border-white/10 shadow-2xl overflow-hidden z-10"
+                            className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-card/50 rounded-2xl border border-border shadow-2xl overflow-hidden z-10"
                             initial={{ y: 20, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -110,7 +110,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
                         {/* Secondary Floating Image (Optional/Decorative) */}
                         <motion.div
-                            className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 bg-zinc-800 rounded-xl border border-white/10 shadow-xl overflow-hidden z-20 hidden md:block"
+                            className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 bg-card rounded-xl border border-border shadow-xl overflow-hidden z-20 hidden md:block"
                             initial={{ y: 40, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -130,7 +130,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
             {/* Decorative bottom gradient */}
             <div
-                className="absolute w-full h-24 bottom-0 left-0 z-0 bg-gradient-to-t from-black to-transparent"
+                className="absolute w-full h-24 bottom-0 left-0 z-0 bg-gradient-to-t from-background to-transparent"
             />
         </section>
     );

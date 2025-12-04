@@ -2,15 +2,15 @@ import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
 
 export function ScalingSection() {
     return (
-        <section className="py-16 md:py-32 bg-black text-white">
+        <section className="py-16 md:py-32 bg-background text-foreground">
             <div className="mx-auto max-w-xl md:max-w-6xl px-6">
                 <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                     <div className="lg:col-span-2">
                         <div className="md:pr-6 lg:pr-0">
                             <h2 className="text-4xl font-semibold lg:text-5xl">Partnering for Operational Excellence</h2>
-                            <p className="mt-6 text-gray-400">We work alongside your team to ensure your boiler systems are running at peak efficiency, minimizing downtime and maximizing output.</p>
+                            <p className="mt-6 text-muted-foreground">We work alongside your team to ensure your boiler systems are running at peak efficiency, minimizing downtime and maximizing output.</p>
                         </div>
-                        <ul className="mt-8 divide-y divide-white/10 border-y border-white/10 *:flex *:items-center *:gap-3 *:py-3">
+                        <ul className="mt-8 divide-y divide-border border-y border-border *:flex *:items-center *:gap-3 *:py-3">
                             <li>
                                 <Mail className="size-5 text-accent" />
                                 24/7 Technical Support
@@ -29,8 +29,8 @@ export function ScalingSection() {
                             </li>
                         </ul>
                     </div>
-                    <div className="border-white/10 relative rounded-3xl border p-3 lg:col-span-3">
-                        <div className="bg-gradient-to-b aspect-76/59 relative rounded-2xl from-zinc-800 to-transparent p-px">
+                    <div className="border-border relative rounded-3xl border p-3 lg:col-span-3">
+                        <div className="bg-gradient-to-b aspect-76/59 relative rounded-2xl from-muted to-transparent p-px">
                             {/* Placeholder for Industrial Team Image */}
                             <div
                                 className="w-full h-full rounded-[15px] bg-cover bg-center min-h-[400px]"

@@ -3,17 +3,17 @@ import { Shield, Users, Wrench, Settings, BarChart, Phone, ArrowRight } from 'lu
 
 export function ServicesSection() {
     return (
-        <section className="bg-black py-20 md:py-32" id="services">
+        <section className="bg-background py-20 md:py-32" id="services">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="mb-16 text-center max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl mb-4">Our Services</h2>
-                    <p className="text-lg text-gray-400">Comprehensive solutions for boiler efficiency, maintenance, and operational excellence.</p>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl mb-4">Our Services</h2>
+                    <p className="text-lg text-muted-foreground">Comprehensive solutions for boiler efficiency, maintenance, and operational excellence.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
 
                     {/* Soot Blower Services - Large Card */}
-                    <Card className="group relative col-span-1 md:col-span-2 lg:col-span-2 overflow-hidden border-0 bg-zinc-900/50">
+                    <Card className="group relative col-span-1 md:col-span-2 lg:col-span-2 overflow-hidden border-0 bg-card">
                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop)' }} />
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
@@ -25,7 +25,7 @@ export function ServicesSection() {
                     </Card>
 
                     {/* Boiler Efficiency */}
-                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                    <Card className="group relative overflow-hidden border-0 bg-card">
                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1666615435088-4865bf5ed3fd?q=80&w=2071&auto=format&fit=crop)' }} />
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
@@ -37,7 +37,7 @@ export function ServicesSection() {
                     </Card>
 
                     {/* Spare Parts */}
-                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                    <Card className="group relative overflow-hidden border-0 bg-card">
                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581093458791-9f302e6d8359?q=80&w=2070&auto=format&fit=crop)' }} />
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
@@ -49,7 +49,7 @@ export function ServicesSection() {
                     </Card>
 
                     {/* Expert Consultation - Wide */}
-                    <Card className="group relative col-span-1 md:col-span-2 overflow-hidden border-0 bg-zinc-900/50">
+                    <Card className="group relative col-span-1 md:col-span-2 overflow-hidden border-0 bg-card">
                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=2070&auto=format&fit=crop)' }} />
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
@@ -61,7 +61,7 @@ export function ServicesSection() {
                     </Card>
 
                     {/* 24/7 Support */}
-                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                    <Card className="group relative overflow-hidden border-0 bg-card">
                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop)' }} />
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
