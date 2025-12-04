@@ -1,95 +1,77 @@
 import { Card, CardContent } from '@/components/ui/card'
-import { Shield, Users, Wrench, Settings, BarChart, Phone } from 'lucide-react'
+import { Shield, Users, Wrench, Settings, BarChart, Phone, ArrowRight } from 'lucide-react'
 
 export function ServicesSection() {
     return (
-        <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent" id="services">
-            <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
-                <div className="mb-16 text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Services</h2>
-                    <p className="mt-4 text-lg text-gray-400">Comprehensive solutions for boiler efficiency and maintenance.</p>
+        <section className="bg-black py-20 md:py-32" id="services">
+            <div className="mx-auto max-w-7xl px-6">
+                <div className="mb-16 text-center max-w-3xl mx-auto">
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl mb-4">Our Services</h2>
+                    <p className="text-lg text-gray-400">Comprehensive solutions for boiler efficiency, maintenance, and operational excellence.</p>
                 </div>
-                <div className="relative">
-                    <div className="relative z-10 grid grid-cols-6 gap-3">
-                        {/* Soot Blower Services - Large Card */}
-                        <Card className="relative col-span-full flex overflow-hidden lg:col-span-2 bg-zinc-900 border-zinc-800">
-                            <CardContent className="relative m-auto size-fit pt-6">
-                                <div className="relative flex h-24 w-56 items-center justify-center">
-                                    <Wrench className="size-16 text-accent" />
-                                </div>
-                                <h2 className="mt-6 text-center text-2xl font-semibold text-white">Soot Blower Services</h2>
-                                <p className="mt-2 text-center text-sm text-gray-400">Maintenance & Repair</p>
-                            </CardContent>
-                        </Card>
 
-                        {/* Boiler Efficiency - Medium Card */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-zinc-900 border-zinc-800">
-                            <CardContent className="pt-6 flex flex-col items-center">
-                                <div className="relative mx-auto flex aspect-square size-32 rounded-full border border-zinc-700 items-center justify-center">
-                                    <BarChart className="size-16 text-accent" />
-                                </div>
-                                <div className="relative z-10 mt-6 space-y-2 text-center">
-                                    <h2 className="text-lg font-medium transition text-white">Boiler Efficiency</h2>
-                                    <p className="text-gray-400 text-sm">Optimize performance and reduce fuel consumption.</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
 
-                        {/* Spare Parts - Medium Card */}
-                        <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-zinc-900 border-zinc-800">
-                            <CardContent className="pt-6 flex flex-col items-center">
-                                <div className="relative mx-auto flex aspect-square size-32 rounded-full border border-zinc-700 items-center justify-center">
-                                    <Settings className="size-16 text-accent" />
-                                </div>
-                                <div className="relative z-10 mt-6 space-y-2 text-center">
-                                    <h2 className="text-lg font-medium transition text-white">Spare Parts</h2>
-                                    <p className="text-gray-400 text-sm">High-quality components for reliability.</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                    {/* Soot Blower Services - Large Card */}
+                    <Card className="group relative col-span-1 md:col-span-2 lg:col-span-2 overflow-hidden border-0 bg-zinc-900/50">
+                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop)' }} />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
+                        <CardContent className="relative h-full flex flex-col justify-end p-8">
+                            <Wrench className="size-10 text-accent mb-4" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Soot Blower Services</h3>
+                            <p className="text-gray-200 max-w-md">Complete maintenance, repair, and overhaul services for all types of soot blowers to ensure optimal performance.</p>
+                        </CardContent>
+                    </Card>
 
-                        {/* Consultation - Large Card */}
-                        <Card className="relative col-span-full overflow-hidden lg:col-span-3 bg-zinc-900 border-zinc-800">
-                            <CardContent className="grid pt-6 sm:grid-cols-2 gap-4">
-                                <div className="relative z-10 flex flex-col justify-center space-y-4">
-                                    <div className="relative flex aspect-square size-12 rounded-full border border-zinc-700 items-center justify-center">
-                                        <Users className="size-6 text-accent" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <h2 className="text-lg font-medium text-white transition">Expert Consultation</h2>
-                                        <p className="text-gray-400 text-sm">Troubleshooting and performance enhancement strategies.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-center">
-                                    {/* Placeholder for consultation visual */}
-                                    <div className="w-full h-32 bg-zinc-800 rounded-lg flex items-center justify-center">
-                                        <span className="text-zinc-600">Consultation Visual</span>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
+                    {/* Boiler Efficiency */}
+                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1666615435088-4865bf5ed3fd?q=80&w=2071&auto=format&fit=crop)' }} />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
+                        <CardContent className="relative h-full flex flex-col justify-end p-8">
+                            <BarChart className="size-10 text-accent mb-4" />
+                            <h3 className="text-xl font-bold text-white mb-2">Boiler Efficiency</h3>
+                            <p className="text-gray-200 text-sm">Advanced analysis and tuning to maximize fuel efficiency.</p>
+                        </CardContent>
+                    </Card>
 
-                        {/* Support - Large Card */}
-                        <Card className="relative col-span-full overflow-hidden lg:col-span-3 bg-zinc-900 border-zinc-800">
-                            <CardContent className="grid h-full pt-6 sm:grid-cols-2 gap-4">
-                                <div className="relative z-10 flex flex-col justify-center space-y-4">
-                                    <div className="relative flex aspect-square size-12 rounded-full border border-zinc-700 items-center justify-center">
-                                        <Phone className="size-6 text-accent" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <h2 className="text-lg font-medium text-white transition">24/7 Support</h2>
-                                        <p className="text-gray-400 text-sm">Always available to assist with your boiler needs.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-center">
-                                    {/* Placeholder for support visual */}
-                                    <div className="w-full h-32 bg-zinc-800 rounded-lg flex items-center justify-center">
-                                        <span className="text-zinc-600">Support Visual</span>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
+                    {/* Spare Parts */}
+                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581093458791-9f302e6d8359?q=80&w=2070&auto=format&fit=crop)' }} />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
+                        <CardContent className="relative h-full flex flex-col justify-end p-8">
+                            <Settings className="size-10 text-accent mb-4" />
+                            <h3 className="text-xl font-bold text-white mb-2">Spare Parts</h3>
+                            <p className="text-gray-200 text-sm">High-quality OEM equivalent parts for reliability.</p>
+                        </CardContent>
+                    </Card>
+
+                    {/* Expert Consultation - Wide */}
+                    <Card className="group relative col-span-1 md:col-span-2 overflow-hidden border-0 bg-zinc-900/50">
+                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=2070&auto=format&fit=crop)' }} />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
+                        <CardContent className="relative h-full flex flex-col justify-end p-8">
+                            <Users className="size-10 text-accent mb-4" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Expert Consultation</h3>
+                            <p className="text-gray-200 max-w-md">Technical expertise to solve complex boiler operation challenges and improve plant availability.</p>
+                        </CardContent>
+                    </Card>
+
+                    {/* 24/7 Support */}
+                    <Card className="group relative overflow-hidden border-0 bg-zinc-900/50">
+                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop)' }} />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-500" />
+                        <CardContent className="relative h-full flex flex-col justify-end p-8">
+                            <Phone className="size-10 text-accent mb-4" />
+                            <h3 className="text-xl font-bold text-white mb-2">24/7 Support</h3>
+                            <p className="text-gray-200 text-sm">Round-the-clock technical assistance.</p>
+                        </CardContent>
+                    </Card>
+
                 </div>
             </div>
         </section>

@@ -31,7 +31,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
     const itemVariants = {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
     };
 
     const layoutClasses = reverseLayout
@@ -43,10 +43,10 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
 
     return (
-        <section className="relative py-24 md:py-48 bg-black overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-black overflow-hidden">
             <div className="container max-w-[1220px] w-full px-6 md:px-10 relative z-10 mx-auto">
                 <motion.div
-                    className={`grid grid-cols-1 gap-16 md:gap-8 w-full items-center ${layoutClasses}`}
+                    className={`grid grid-cols-1 gap-8 md:gap-12 w-full items-center ${layoutClasses}`}
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -54,21 +54,21 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                 >
                     {/* Text Content */}
                     <motion.div
-                        className={`flex flex-col items-start gap-4 mt-10 md:mt-0 max-w-[546px] mx-auto md:mx-0 ${textOrderClass}`}
+                        className={`flex flex-col items-start gap-6 mt-8 md:mt-0 max-w-[600px] mx-auto md:mx-0 ${textOrderClass}`}
                         variants={itemVariants}
                     >
-                        <div className="space-y-2 md:space-y-1">
-                            <h2 className="text-white text-3xl md:text-[40px] font-semibold leading-tight md:leading-[53px]">
+                        <div className="space-y-4">
+                            <h2 className="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight">
                                 {title}
                             </h2>
                         </div>
 
-                        <p className="text-[#868f97] text-sm md:text-[15px] leading-6">
+                        <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
                             {description}
                         </p>
                         {/* Optional: Add a button or link here */}
-                        <div>
-                            <a href="#contact" className="mt-4 inline-block px-8 py-4 bg-[#ff6b00] hover:bg-orange-600 text-white rounded-full font-bold transition-colors">
+                        <div className="pt-2">
+                            <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-[#ff6b00] hover:bg-orange-600 rounded-md transition-all duration-200 shadow-lg hover:shadow-orange-500/25">
                                 Get a Quote
                             </a>
                         </div>
@@ -76,69 +76,61 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
 
                     {/* App mockup/Image Content */}
                     <motion.div
-                        className={`relative mt-10 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[300px] md:max-w-[471px]`}
+                        className={`relative mt-8 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[350px] md:max-w-[500px]`}
                         variants={itemVariants}
                     >
                         {/* Decorative Background Element */}
                         <motion.div
-                            className={`absolute w-[300px] h-[317px] md:w-[472px] md:h-[500px] bg-[#090909] rounded-[32px] z-0`}
+                            className={`absolute w-full h-full bg-gradient-to-tr from-[#ff6b00]/20 to-purple-500/20 rounded-full blur-3xl z-0`}
                             style={{
-                                top: reverseLayout ? 'auto' : '10%',
-                                bottom: reverseLayout ? '10%' : 'auto',
-                                left: reverseLayout ? 'auto' : '-20%',
-                                right: reverseLayout ? '-20%' : 'auto',
-                                transform: reverseLayout ? 'translate(0, 0)' : 'translateY(10%)',
-                                filter: 'blur(2px)'
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
                             }}
-                            initial={{ y: reverseLayout ? 0 : 0 }}
-                            whileInView={{ y: reverseLayout ? -20 : -30 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.5 }}
+                        />
+
+                        {/* Main Mockup Card */}
+                        <motion.div
+                            className="relative w-full aspect-[4/3] md:aspect-[16/10] bg-zinc-900/50 rounded-2xl border border-white/10 shadow-2xl overflow-hidden z-10"
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="w-full h-full relative group">
+                                <div
+                                    className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                    style={{
+                                        backgroundImage: `url(${primaryImageSrc})`,
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                            </div>
+                        </motion.div>
+
+                        {/* Secondary Floating Image (Optional/Decorative) */}
+                        <motion.div
+                            className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 bg-zinc-800 rounded-xl border border-white/10 shadow-xl overflow-hidden z-20 hidden md:block"
+                            initial={{ y: 40, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                            viewport={{ once: true }}
                         >
                             <div
-                                className="relative w-full h-full bg-cover bg-center rounded-[32px]"
+                                className="w-full h-full bg-cover bg-center"
                                 style={{
                                     backgroundImage: `url(${secondaryImageSrc})`,
                                 }}
                             />
                         </motion.div>
 
-                        {/* Main Mockup Card */}
-                        <motion.div
-                            className="relative w-full h-[405px] md:h-[637px] bg-[#ffffff0a] rounded-[32px] backdrop-blur-[15px] backdrop-brightness-[100%] border-0 z-10 overflow-hidden"
-                            initial={{ y: reverseLayout ? 0 : 0 }}
-                            whileInView={{ y: reverseLayout ? 20 : 30 }}
-                            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                        >
-                            <div className="p-0 h-full">
-                                <div
-                                    className="h-full relative"
-                                    style={{
-                                        backgroundSize: "100% 100%",
-                                    }}
-                                >
-                                    {/* Primary Image */}
-                                    <div
-                                        className="w-full h-full bg-cover bg-center"
-                                        style={{
-                                            backgroundImage: `url(${primaryImageSrc})`,
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        </motion.div>
                     </motion.div>
                 </motion.div>
             </div>
 
             {/* Decorative bottom gradient */}
             <div
-                className="absolute w-full h-px bottom-0 left-0 z-0"
-                style={{
-                    background:
-                        "radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 100%)",
-                }}
+                className="absolute w-full h-24 bottom-0 left-0 z-0 bg-gradient-to-t from-black to-transparent"
             />
         </section>
     );
