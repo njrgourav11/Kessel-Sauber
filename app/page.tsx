@@ -7,9 +7,10 @@ import { AboutSection } from "@/components/ui/about-section";
 import { Contact2 } from "@/components/ui/contact-2";
 import { Footer } from "@/components/ui/footer-section";
 
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-background text-foreground">
       <Header />
       <SectionWithMockup
         title={
@@ -29,7 +30,7 @@ export default function Home() {
       <ServicesSection />
       <ScalingSection />
       <TestimonialsSection
-        title="Trusted by Industry Leaders"
+        title="What Our Clients Say"
         description="See what our clients say about our soot blower and boiler efficiency services."
         testimonials={[
           {

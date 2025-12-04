@@ -30,6 +30,7 @@ import {
     Cog
 } from 'lucide-react';
 import { useScroll } from '@/components/ui/use-scroll';
+import DarkModeToggle from '@/components/ui/dark-mode-toggle';
 
 type LinkItem = {
     title: string;
@@ -112,18 +113,22 @@ export function Header() {
                 <div className="hidden items-center gap-2 md:flex">
                     <Button variant="ghost" asChild><a href="#contact">Contact</a></Button>
                     <Button className="bg-accent hover:bg-orange-600 text-white">Get a Quote</Button>
+                    <DarkModeToggle />
                 </div>
-                <Button
-                    size="icon"
-                    variant="outline"
-                    onClick={() => setOpen(!open)}
-                    className="md:hidden"
-                    aria-expanded={open}
-                    aria-controls="mobile-menu"
-                    aria-label="Toggle menu"
-                >
-                    <MenuToggleIcon open={open} className="size-5" duration={300} />
-                </Button>
+                <div className="flex items-center gap-2 md:hidden">
+                    <DarkModeToggle />
+                    <Button
+                        size="icon"
+                        variant="outline"
+                        onClick={() => setOpen(!open)}
+                        className="md:hidden"
+                        aria-expanded={open}
+                        aria-controls="mobile-menu"
+                        aria-label="Toggle menu"
+                    >
+                        <MenuToggleIcon open={open} className="size-5" duration={300} />
+                    </Button>
+                </div>
             </nav>
             <MobileMenu open={open} className="flex flex-col justify-between gap-2 overflow-y-auto">
                 <NavigationMenu className="max-w-full items-start justify-start">
